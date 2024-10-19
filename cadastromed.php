@@ -25,17 +25,71 @@ if (isset($_POST['cadastrar'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #d1e8ff, #c6e3f3);
+            background: linear-gradient(to bottom, #e0f7ea, #c8e6c9);
+        }
+
+        .custom-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-header {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .custom-form {
+            padding: 20px;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #28a745;
+            border-radius: 10px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #1e7e34;
+            box-shadow: none;
+        }
+
+        .custom-btn {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .custom-btn:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+            color: #fff;
+            background-color: #28a745;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .btn-back:hover {
+            background-color: #1e7e34;
         }
     </style>
 </head>
 
 <body>
+
 <header>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="sidebarLabel">
-            </h5>
+            <h5 class="offcanvas-title" id="sidebarLabel"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -63,42 +117,46 @@ if (isset($_POST['cadastrar'])) {
         </div>
     </nav>
 </header>
-    <br>
-    <br>
-    <br>
-    <div class="container mt-5">
-    <div class="card shadow-lg p-4 mx-auto" style="max-width: 600px; background-color: #e7f3fe;">
-        <h2 class="text-center mb-4 text-primary">Registro de Produtos Farmacêuticos</h2>
-        <form action="" method="post">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome do Produto</label>
-                <input type="text" id="nome" name="nome" class="form-control" placeholder="Insira o nome do produto" required>
-            </div>
-            <div class="mb-3">
-                <label for="preco" class="form-label">Valor</label>
-                <input type="number" id="preco" name="preco" class="form-control" placeholder="Insira o valor" required>
-            </div>
-            <div class="mb-3">
-                <label for="quantidade" class="form-label">Estoque</label>
-                <input type="number" id="quantidade" name="quantidade" class="form-control" placeholder="Informe a quantidade disponível" required>
-            </div>
-            <div class="mb-3">
-                <label for="categoria" class="form-label">Tipo de Produto</label>
-                <select id="categoria" name="categoria" class="form-select" required>
-                    <option value="" disabled selected>Escolha o tipo</option>
-                    <option value="Analgésico">Analgésico</option>
-                    <option value="Antibiótico">Antibiótico</option>
-                    <option value="Anti-inflamatório">Anti-inflamatório</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="validade" class="form-label">Data de Expiração</label>
-                <input type="date" id="validade" name="validade" class="form-control" required>
-            </div>
-            <div class="d-grid">
-                <input type="submit" value="Registrar" name="registrar" class="btn btn-success">
-            </div>
-        </form>
+
+<br><br><br>
+
+<div class="container mt-5">
+    <div class="card custom-card shadow-lg p-4 mx-auto" style="max-width: 600px;">
+        <div class="custom-header">
+            <h2 class="text-center mb-4">Cadastro de Produtos</h2>
+        </div>
+        <div class="custom-form">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome do Produto</label>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="Insira o nome do produto" required>
+                </div>
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Valor</label>
+                    <input type="number" id="preco" name="preco" class="form-control" placeholder="Insira o valor" required>
+                </div>
+                <div class="mb-3">
+                    <label for="quantidade" class="form-label">Estoque</label>
+                    <input type="number" id="quantidade" name="quantidade" class="form-control" placeholder="Informe a quantidade disponível" required>
+                </div>
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Tipo de Produto</label>
+                    <select id="categoria" name="categoria" class="form-select" required>
+                        <option value="" disabled selected>Escolha o tipo</option>
+                        <option value="Analgésico">Analgésico</option>
+                        <option value="Antibiótico">Antibiótico</option>
+                        <option value="Anti-inflamatório">Anti-inflamatório</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="validade" class="form-label">Data de Expiração</label>
+                    <input type="date" id="validade" name="validade" class="form-control" required>
+                </div>
+                <div class="d-grid">
+                    <input type="submit" value="Registrar" name="cadastrar" class="btn custom-btn">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

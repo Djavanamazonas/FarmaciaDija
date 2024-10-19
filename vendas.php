@@ -45,7 +45,7 @@ if (isset($_POST['vender'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: #e9f5f9;
+            background: #f0f0f0;
         }
 
         .custom-card {
@@ -55,7 +55,7 @@ if (isset($_POST['vender'])) {
         }
 
         .custom-header {
-            background: #4CAF50;
+            background: #28a745;
             color: white;
             padding: 20px;
             text-align: center;
@@ -67,26 +67,43 @@ if (isset($_POST['vender'])) {
             padding: 20px;
         }
 
+        label {
+            color: #333;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #28a745;
+            border-radius: 10px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #1e7e34;
+            box-shadow: none;
+        }
+
         .custom-btn {
-            background-color: #007BFF;
+            background-color: #333;
             color: white;
             padding: 10px 20px;
             border-radius: 50px;
+            border: none;
         }
 
         .custom-btn:hover {
-            background-color: #0056b3;
+            background-color: #28a745;
+            color: white;
         }
 
         .btn-back {
             margin-top: 20px;
             color: #fff;
-            background-color: #f44336;
+            background-color: #28a745;
             border-radius: 50px;
+            border: none;
         }
 
         .btn-back:hover {
-            background-color: #c0392b;
+            background-color: #1e7e34;
         }
 
         .custom-alert {
