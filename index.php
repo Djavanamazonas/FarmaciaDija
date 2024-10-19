@@ -35,31 +35,53 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmácia</title>
+    <title>Farmácia - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #343a40, #495057);
+            background: linear-gradient(135deg, #004d40, #26a69a);
             color: #f8f9fa;
         }
+
         .card-custom {
             border-radius: 15px;
-            background-color: #2c3e50;
+            background-color: #ffffff;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
+
         .card-header-custom {
-            background-color: #f39c12;
-            color: #2c3e50;
+            background-color: #004d40;
+            color: #ffffff;
             font-weight: bold;
+            text-align: center;
         }
+
         .form-control-custom {
             border-radius: 20px;
+            border: 2px solid #004d40;
+            padding: 15px;
         }
+
+        .form-control-custom:focus {
+            border-color: #26a69a;
+            box-shadow: none;
+        }
+
         .btn-custom {
-            border-radius: 20px;
-            background-color: #f39c12;
-            color: #2c3e50;
+            border-radius: 30px;
+            background-color: #004d40;
+            color: #ffffff;
             font-weight: bold;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #26a69a;
+        }
+
+        .form-label {
+            color: #004d40;
         }
     </style>
 </head>
@@ -69,18 +91,18 @@ if (isset($_POST['login'])) {
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4">
                 <div class="card card-custom shadow-lg">
-                    <div class="card-header card-header-custom text-center">
+                    <div class="card-header card-header-custom">
                         <h4>Entrar no Sistema</h4>
                     </div>
                     <div class="card-body p-4">
                         <form action="" method="post">
                             <div class="mb-3">
-                                <label for="usuario" class="form-label text-warning">Nome de Usuário</label>
-                                <input type="text" id="usuario" name="usuario" class="form-control form-control-custom border-warning" placeholder="Informe seu nome de usuário" required>
+                                <label for="usuario" class="form-label">Nome de Usuário</label>
+                                <input type="text" id="usuario" name="usuario" class="form-control form-control-custom" placeholder="Informe seu nome de usuário" required>
                             </div>
                             <div class="mb-3">
-                                <label for="senha" class="form-label text-warning">Chave de Acesso</label>
-                                <input type="password" id="senha" name="senha" class="form-control form-control-custom border-warning" placeholder="Informe sua senha" required>
+                                <label for="senha" class="form-label">Chave de Acesso</label>
+                                <input type="password" id="senha" name="senha" class="form-control form-control-custom" placeholder="Informe sua senha" required>
                             </div>
                             <div class="d-grid">
                                 <button type="submit" name="login" class="btn btn-custom">Acessar</button>

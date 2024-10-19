@@ -45,20 +45,58 @@ if (isset($_POST['vender'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: #f0f0f0;
+            background-color: #f4f6f7;
+        }
+
+        .btn-menu {
+            background-color: #004d40;
+            color: white;
+        }
+
+        .btn-menu:hover {
+            background-color: #26a69a;
+        }
+
+        .offcanvas-header {
+            background-color: #004d40;
+            color: white;
+        }
+
+        .offcanvas-body {
+            background-color: #e0f2f1;
+        }
+
+        .offcanvas a {
+            color: #004d40;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 0;
+        }
+
+        .offcanvas a:hover {
+            color: #26a69a;
+        }
+
+        .btn-login-light {
+            background-color: #004d40;
+            color: white;
+        }
+
+        .btn-login-light:hover {
+            background-color: #26a69a;
         }
 
         .custom-card {
-            background: white;
+            background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .custom-header {
-            background: #28a745;
+            background-color: #004d40;
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 20px;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
@@ -67,12 +105,8 @@ if (isset($_POST['vender'])) {
             padding: 20px;
         }
 
-        label {
-            color: #333;
-        }
-
         .form-control, .form-select {
-            border: 2px solid #28a745;
+            border: 2px solid #26a69a;
             border-radius: 10px;
         }
 
@@ -82,7 +116,7 @@ if (isset($_POST['vender'])) {
         }
 
         .custom-btn {
-            background-color: #333;
+            background-color: #004d40;
             color: white;
             padding: 10px 20px;
             border-radius: 50px;
@@ -90,14 +124,14 @@ if (isset($_POST['vender'])) {
         }
 
         .custom-btn:hover {
-            background-color: #28a745;
+            background-color: #26a69a;
             color: white;
         }
 
         .btn-back {
             margin-top: 20px;
             color: #fff;
-            background-color: #28a745;
+            background-color: #004d40;
             border-radius: 50px;
             border: none;
         }
@@ -107,40 +141,32 @@ if (isset($_POST['vender'])) {
         }
 
         .custom-alert {
-            border-radius: 50px;
-            padding: 10px 20px;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="tbremedios.php">Tabela de Remédios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="cadastromed.php">Cadastro</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="btn btn-outline-danger" href="index.php">Sair</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+
+    <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+        Menu
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Opções de Navegação</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li><a href="cadastromed.php">Registrar Produto</a></li>
+                <li><a href="tbremedios.php">Tabela de Remédios</a></li>
+                <li><a class="btn btn-login-white mt-4" href="index.php">Sair</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="container mt-5 pt-5">
         <div class="custom-card mx-auto mt-5">
@@ -179,7 +205,7 @@ if (isset($_POST['vender'])) {
                     </div>
                 </form>
 
-                <div class="text-center">
+                <div class="text-center mt-3">
                     <a href="tbremedios.php" class="btn btn-back btn-lg">Voltar para Tabela de Remédios</a>
                 </div>
             </div>
@@ -187,6 +213,7 @@ if (isset($_POST['vender'])) {
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
